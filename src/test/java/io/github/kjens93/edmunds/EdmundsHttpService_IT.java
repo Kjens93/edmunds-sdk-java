@@ -14,7 +14,7 @@ public class EdmundsHttpService_IT {
     @Test
     public void test() {
         EdmundsHttpService httpService = new EdmundsHttpService("8zk4wr8dg5s9pv8hrwgerb5x");
-        MakesCount vc = httpService.getOne(MakesCount.class, "/api/vehicle/v2/makes/count", new HashMap<String, Object>(){{
+        Makes vc = httpService.getOne(Makes.class, "/api/vehicle/v2/makes/count", new HashMap<String, Object>(){{
             put("view", "full");
         }});
         assertThat(vc.getMakesCount()).isBetween(10, 100);

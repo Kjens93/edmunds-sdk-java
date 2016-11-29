@@ -118,7 +118,7 @@
         <dependency>
             <groupId>io.github.kjens93.async</groupId>
             <artifactId>async</artifactId>
-            <version>5.0.0</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.mashape.unirest</groupId>

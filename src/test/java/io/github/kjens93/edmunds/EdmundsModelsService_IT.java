@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  */
 public class EdmundsModelsService_IT {
 
-    private static final ModelsService edmunds = new EdmundsImpl("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final ModelsService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
 
     @Test
     public void test_findAllModels_getCount() {

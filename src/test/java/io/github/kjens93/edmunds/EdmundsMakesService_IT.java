@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsMakesService_IT {
 
-    private static final MakesService edmunds = new EdmundsImpl("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final MakesService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
     private static final int thisYear = Calendar.getInstance().get(Calendar.YEAR);
 
     @Test

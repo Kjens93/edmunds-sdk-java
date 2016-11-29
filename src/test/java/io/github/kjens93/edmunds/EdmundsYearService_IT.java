@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsYearService_IT {
 
-    private static final YearService edmunds = new EdmundsImpl("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final YearService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
 
     @Test
     public void test_findModelYear() {
