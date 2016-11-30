@@ -67,7 +67,7 @@ class EdmundsHttpService {
             }
         } catch (EdmundsException e) {
             if (retries > 0) {
-                log.log(Level.INFO, "Exception raised from HTTP request: %s\nRetrying...", e.getMessage());
+                log.log(Level.INFO, "Exception raised from HTTP request\n" + e.getMessage() + "\nRetrying...");
                 try {
                     Thread.sleep(random.nextInt(1000));
                 } catch (InterruptedException e1) {
