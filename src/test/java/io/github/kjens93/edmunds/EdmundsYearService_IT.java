@@ -1,7 +1,7 @@
 package io.github.kjens93.edmunds;
 
 import io.github.kjens93.edmunds.enums.Category;
-import io.github.kjens93.edmunds.dtos.Year;
+import io.github.kjens93.edmunds.dto.Year;
 import io.github.kjens93.edmunds.services.YearService;
 import org.junit.Test;
 

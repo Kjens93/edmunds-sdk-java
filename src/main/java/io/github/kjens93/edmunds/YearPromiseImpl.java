@@ -3,7 +3,7 @@ package io.github.kjens93.edmunds;
 import io.github.kjens93.edmunds.enums.Category;
 import io.github.kjens93.edmunds.enums.State;
 import io.github.kjens93.edmunds.enums.View;
-import io.github.kjens93.edmunds.dtos.Year;
+import io.github.kjens93.edmunds.dto.Year;
 import io.github.kjens93.edmunds.promises.YearPromise;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

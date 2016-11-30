@@ -1,7 +1,7 @@
 package io.github.kjens93.edmunds;
 
-import io.github.kjens93.edmunds.dtos.Style;
-import io.github.kjens93.edmunds.dtos.Styles;
+import io.github.kjens93.edmunds.dto.Style;
+import io.github.kjens93.edmunds.dto.Styles;
 import io.github.kjens93.edmunds.enums.Category;
 import io.github.kjens93.edmunds.enums.State;
 import io.github.kjens93.edmunds.enums.View;

@@ -1,7 +1,6 @@
-package io.github.kjens93.edmunds.dtos;
+package io.github.kjens93.edmunds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.github.kjens93.edmunds.dtos.Style;
 import lombok.Value;
 
 import java.util.ArrayList;
@@ -12,9 +11,9 @@ import java.util.List;
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Styles {
+public class Makes {
 
-    private List<Style> styles = new ArrayList<>();
-    private int stylesCount;
+    private List<Make> makes = new ArrayList<>();
+    private int makesCount;
 
 }

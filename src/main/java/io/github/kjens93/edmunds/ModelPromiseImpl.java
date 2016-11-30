@@ -1,6 +1,6 @@
 package io.github.kjens93.edmunds;
 
-import io.github.kjens93.edmunds.dtos.Model;
+import io.github.kjens93.edmunds.dto.Model;
 import io.github.kjens93.edmunds.enums.Category;
 import io.github.kjens93.edmunds.enums.State;
 import io.github.kjens93.edmunds.enums.View;

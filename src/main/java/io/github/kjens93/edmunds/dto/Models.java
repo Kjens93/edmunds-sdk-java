@@ -1,7 +1,6 @@
-package io.github.kjens93.edmunds.dtos;
+package io.github.kjens93.edmunds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import io.github.kjens93.edmunds.dtos.Model;
 import lombok.Value;
 
 import java.util.ArrayList;

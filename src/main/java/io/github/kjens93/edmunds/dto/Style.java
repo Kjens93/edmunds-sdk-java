@@ -1,28 +1,25 @@
-package io.github.kjens93.edmunds.dtos;
+package io.github.kjens93.edmunds.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Value;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by kjensen on 11/20/16.
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Make {
+public class Style {
 
     private int id;
-    private int modelsCount;
     private String name;
-    private String niceName;
-    private List<Model> models = new ArrayList<>();
+    private String trim;
+    private Price price;
+    private Submodel submodel;
 
     @Override
     public String toString() {
         if (name != null) return name;
-        if (niceName != null) return niceName;
+        if (trim != null) return trim;
         return getClass().getSimpleName() + "(id=" + id + ")";
     }
 

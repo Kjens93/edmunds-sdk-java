@@ -1,6 +1,6 @@
 package io.github.kjens93.edmunds;
 
-import io.github.kjens93.edmunds.dtos.Makes;
+import io.github.kjens93.edmunds.dto.Makes;
 import org.junit.Test;
 
 import java.util.HashMap;

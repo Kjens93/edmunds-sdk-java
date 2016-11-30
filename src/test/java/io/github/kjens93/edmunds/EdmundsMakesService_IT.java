@@ -1,6 +1,6 @@
 package io.github.kjens93.edmunds;
 
-import io.github.kjens93.edmunds.dtos.Make;
+import io.github.kjens93.edmunds.dto.Make;
 import io.github.kjens93.edmunds.enums.State;
 import io.github.kjens93.edmunds.services.MakesService;
 import org.junit.Test;

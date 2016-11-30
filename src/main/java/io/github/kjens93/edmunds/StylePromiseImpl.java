@@ -1,6 +1,6 @@
 package io.github.kjens93.edmunds;
 
-import io.github.kjens93.edmunds.dtos.Style;
+import io.github.kjens93.edmunds.dto.Style;
 import io.github.kjens93.edmunds.promises.StylePromise;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
