@@ -14,7 +14,7 @@ public class EdmundsHttpService_IT {
 
     @Test
     public void test() {
-        EdmundsHttpService httpService = new EdmundsHttpService(System.getProperty("EDMUNDS_API_KEY"));
+        EdmundsHttpService httpService = new EdmundsHttpService(System.getenv("EDMUNDS_API_KEY"));
         Makes vc = httpService.getOne(Makes.class, "/api/vehicle/v2/makes/count", new HashMap<String, Object>(){{
             put("view", "full");
         }});

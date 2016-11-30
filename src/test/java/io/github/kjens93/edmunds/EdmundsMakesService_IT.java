@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsMakesService_IT {
 
-    private static final MakesService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
+    private static final MakesService edmunds = new Edmunds(System.getenv("EDMUNDS_API_KEY"));
     private static final int thisYear = Calendar.getInstance().get(Calendar.YEAR);
 
     @Test

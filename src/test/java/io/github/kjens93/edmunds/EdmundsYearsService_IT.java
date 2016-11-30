@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsYearsService_IT {
 
-    private static final YearsService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
+    private static final YearsService edmunds = new Edmunds(System.getenv("EDMUNDS_API_KEY"));
 
     @Test
     public void test_findModelYear() {

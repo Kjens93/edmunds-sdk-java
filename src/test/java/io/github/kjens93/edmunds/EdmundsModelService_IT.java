@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsModelService_IT {
 
-    private static final ModelService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
+    private static final ModelService edmunds = new Edmunds(System.getenv("EDMUNDS_API_KEY"));
 
     @Test
     public void test_findModel_get() {

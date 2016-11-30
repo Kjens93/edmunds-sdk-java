@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  */
 public class EdmundsModelsService_IT {
 
-    private static final ModelsService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
+    private static final ModelsService edmunds = new Edmunds(System.getenv("EDMUNDS_API_KEY"));
 
     @Test
     public void test_findAllModels_getCount() {
