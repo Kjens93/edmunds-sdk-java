@@ -101,8 +101,6 @@
                         <include>**/*_UT.java</include>
                         <include>**/*_IT.java</include>
                     </includes>
-                    <threadCount>0</threadCount>
-                    <forkCount>0</forkCount>
                 </configuration>
             </plugin>
             <plugin>

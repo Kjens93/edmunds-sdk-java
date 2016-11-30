@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 
 /**
@@ -31,6 +32,7 @@ class EdmundsHttpService {
     private String apiKey;
     @Setter
     private int retries = 3;
+    private static final Random random = new Random();
 
     EdmundsHttpService() {
     }
@@ -65,7 +67,12 @@ class EdmundsHttpService {
             }
         } catch (EdmundsException e) {
             if (retries > 0) {
-                log.log(Level.INFO, "Exception raised from HTTP request. Retrying...", e);
+                log.log(Level.INFO, "Exception raised from HTTP request: %s\nRetrying...", e.getMessage());
+                try {
+                    Thread.sleep(random.nextInt(1000));
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
                 return get(endpoint, parameters, --retries);
             } else
                 throw e;
