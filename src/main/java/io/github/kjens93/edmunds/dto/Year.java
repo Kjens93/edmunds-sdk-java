@@ -15,8 +15,8 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Year implements Serializable {
 
-    private int id;
-    private int year;
+    private Integer id;
+    private Integer year;
     private List<State> states = new ArrayList<>();
     private List<Style> styles = new ArrayList<>();
 

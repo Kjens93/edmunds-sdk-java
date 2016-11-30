@@ -7,8 +7,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 /**
  * Created by kjensen on 11/20/16.
  */
@@ -28,12 +26,13 @@ public class Model implements Serializable {
         return getClass().getSimpleName() + "(id=" + id + ")";
     }
 
-    public List<Integer> getYears() {
-        return years.stream().map(Year::getYear).collect(toList());
-    }
+//    @JsonIgnore
+//    public List<Integer> getYears() {
+//        return years.stream().map(Year::getYear).collect(toList());
+//    }
 
-    public List<Year> getModelYears() {
-        return years;
-    }
+//    public List<Year> getModelYears() {
+//        return years;
+//    }
 
 }
