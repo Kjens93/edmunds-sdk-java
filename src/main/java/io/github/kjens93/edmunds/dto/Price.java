@@ -3,12 +3,14 @@ package io.github.kjens93.edmunds.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Value;
 
+import java.io.Serializable;
+
 /**
  * Created by kjensen on 11/20/16.
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Price {
+public class Price implements Serializable {
 
     private double baseMSRP;
     private double baseInvoice;

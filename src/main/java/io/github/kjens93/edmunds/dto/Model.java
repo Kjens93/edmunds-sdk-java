@@ -3,6 +3,7 @@ package io.github.kjens93.edmunds.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Value;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import static java.util.stream.Collectors.toList;
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Model {
+public class Model implements Serializable {
 
     private String id;
     private String name;

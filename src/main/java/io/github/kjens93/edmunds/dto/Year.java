@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.github.kjens93.edmunds.enums.State;
 import lombok.Value;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Year {
+public class Year implements Serializable {
 
     private int id;
     private int year;

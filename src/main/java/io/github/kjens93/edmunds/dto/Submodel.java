@@ -3,12 +3,14 @@ package io.github.kjens93.edmunds.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Value;
 
+import java.io.Serializable;
+
 /**
  * Created by kjensen on 11/23/16.
  */
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Submodel {
+public class Submodel implements Serializable {
 
     private String body;
     private String modelName;
