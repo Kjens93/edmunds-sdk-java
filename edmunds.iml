@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="promises" />
+    <orderEntry type="module" module-name="functional-interfaces" />
     <orderEntry type="library" name="Maven: com.google.guava:guava-base:r03" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava-annotations:r03" level="project" />
     <orderEntry type="library" name="Maven: com.mashape.unirest:unirest-java:1.4.9" level="project" />
