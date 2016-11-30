@@ -5,6 +5,7 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import io.github.kjens93.edmunds.utils.EdmundsException;
 import lombok.Setter;
 import lombok.extern.java.Log;
 import org.apache.http.client.utils.URIBuilder;
@@ -28,6 +29,8 @@ class EdmundsHttpService {
     private String baseUrl = "api.edmunds.com";
     @Setter
     private String apiKey;
+    @Setter
+    private int retries = 3;
 
     EdmundsHttpService() {
     }
@@ -36,9 +39,9 @@ class EdmundsHttpService {
         this.apiKey = apiKey;
     }
 
-    <T> T getOne(Class<T> clazz, String endpoint, Map<String, Object> parameters) throws EdmundsException {
-        parameters = prepare(parameters);
-        String json = get(endpoint, parameters, 3);
+    <T> T getOne(final Class<T> clazz, final String endpoint, final Map<String, Object> parameters) throws EdmundsException {
+        Map<String, Object> params = prepare(parameters);
+        String json = get(endpoint, params, retries);
         return deserialize(clazz, json);
     }
 

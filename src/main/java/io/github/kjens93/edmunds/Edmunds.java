@@ -1,5 +1,11 @@
 package io.github.kjens93.edmunds;
 
+import io.github.kjens93.edmunds.promises.*;
+import io.github.kjens93.edmunds.services.MakesService;
+import io.github.kjens93.edmunds.services.ModelsService;
+import io.github.kjens93.edmunds.services.StylesService;
+import io.github.kjens93.edmunds.services.YearsService;
+
 /**
  * Created by kjensen on 11/20/16.
  */
@@ -12,58 +18,58 @@ public class Edmunds implements MakesService, ModelsService, YearsService, Style
     }
 
     @Override
-    public MakeService.Query findMake(String niceName) {
-        return new MakeQueryImpl(httpService, niceName);
+    public MakePromise findMake(String niceName) {
+        return new MakePromiseImpl(httpService, niceName);
     }
 
     @Override
-    public MakesService.Query findAllMakes() {
-        return new MakesQueryImpl(httpService);
+    public MakesPromise findAllMakes() {
+        return new MakesPromiseImpl(httpService);
     }
 
     @Override
-    public ModelService.Query findModel(String makeNiceName, String modelNiceName) {
-        return new ModelQueryImpl(httpService, makeNiceName, modelNiceName);
+    public ModelPromise findModel(String makeNiceName, String modelNiceName) {
+        return new ModelPromiseImpl(httpService, makeNiceName, modelNiceName);
     }
 
     @Override
-    public ModelsService.Query findAllModels(String makeNiceName) {
-        return new ModelsQueryImpl(httpService, makeNiceName);
+    public ModelsPromise findAllModels(String makeNiceName) {
+        return new ModelsPromiseImpl(httpService, makeNiceName);
     }
 
     @Override
-    public YearsService.Query findAllModelYears(String makeNiceName, String modelNiceName) {
-        return new YearsQueryImpl(httpService, makeNiceName, modelNiceName);
+    public YearsPromise findAllModelYears(String makeNiceName, String modelNiceName) {
+        return new YearsPromiseImpl(httpService, makeNiceName, modelNiceName);
     }
 
     @Override
-    public YearService.Query findModelYear(String makeNiceName, String modelNiceName, int year) {
-        return new YearQueryImpl(httpService, makeNiceName, modelNiceName, year);
+    public YearPromise findModelYear(String makeNiceName, String modelNiceName, int year) {
+        return new YearPromiseImpl(httpService, makeNiceName, modelNiceName, year);
     }
 
     @Override
-    public StyleService.Query findStyle(int id) {
-        return new StyleQueryImpl(httpService, id);
+    public StylePromise findStyle(int id) {
+        return new StylePromiseImpl(httpService, id);
     }
 
     @Override
-    public StylesService.Query1 findStyles(String makeNiceName, String modelNiceName, int year) {
-        return new StylesQueryImpl(httpService, makeNiceName, modelNiceName, year);
+    public StylesPromise findAllStyles(String makeNiceName, String modelNiceName, int year) {
+        return new StylesPromiseImpl(httpService, makeNiceName, modelNiceName, year);
     }
 
     @Override
-    public StylesService.Query2 findStyles(String makeNiceName, String modelNiceName) {
-        return new StylesQueryImpl(httpService, makeNiceName, modelNiceName);
+    public StylesCountPromise findAllStyles(String makeNiceName, String modelNiceName) {
+        return new StylesPromiseImpl(httpService, makeNiceName, modelNiceName);
     }
 
     @Override
-    public StylesService.Query2 findStyles(String makeNiceName) {
-        return new StylesQueryImpl(httpService, makeNiceName);
+    public StylesCountPromise findAllStyles(String makeNiceName) {
+        return new StylesPromiseImpl(httpService, makeNiceName);
     }
 
     @Override
-    public StylesService.Query2 findStyles() {
-        return new StylesQueryImpl(httpService);
+    public StylesCountPromise findAllStyles() {
+        return new StylesPromiseImpl(httpService);
     }
 
 }

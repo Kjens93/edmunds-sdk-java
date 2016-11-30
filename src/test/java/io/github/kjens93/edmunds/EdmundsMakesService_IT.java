@@ -1,11 +1,11 @@
 package io.github.kjens93.edmunds;
 
+import io.github.kjens93.edmunds.dtos.Make;
+import io.github.kjens93.edmunds.enums.State;
+import io.github.kjens93.edmunds.services.MakesService;
 import org.junit.Test;
 
 import java.util.Calendar;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,47 +14,41 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsMakesService_IT {
 
-    private static final MakesService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final MakesService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
     private static final int thisYear = Calendar.getInstance().get(Calendar.YEAR);
 
     @Test
     public void test_findAllMakes_getCount() {
-        assertThat(edmunds.findAllMakes().count())
-                .isBetween(30, 100);
-    }
-
-    @Test
-    public void test_findAllMakes_getCount_async() throws InterruptedException, TimeoutException, ExecutionException {
-        assertThat(edmunds.findAllMakes().countAsync(null).get(10, TimeUnit.SECONDS))
+        assertThat(edmunds.findAllMakes().getCount())
                 .isBetween(30, 100);
     }
 
     @Test
     public void test_findAllMakes_getCount_state() {
-        assertThat(edmunds.findAllMakes().state(State.FUTURE).count())
+        assertThat(edmunds.findAllMakes().state(State.FUTURE).getCount())
                 .isBetween(10,30);
-        assertThat(edmunds.findAllMakes().state(State.USED).count())
+        assertThat(edmunds.findAllMakes().state(State.USED).getCount())
                 .isBetween(50,75);
-        assertThat(edmunds.findAllMakes().state(State.NEW).count())
+        assertThat(edmunds.findAllMakes().state(State.NEW).getCount())
                 .isBetween(30,60);
     }
 
     @Test
     public void test_findAllMakes_getCount_state_year() {
-        assertThat(edmunds.findAllMakes().state(State.FUTURE).year(thisYear).count())
+        assertThat(edmunds.findAllMakes().state(State.FUTURE).year(thisYear).getCount())
                 .isBetween(1, 10);
-        assertThat(edmunds.findAllMakes().state(State.USED).year(thisYear).count())
+        assertThat(edmunds.findAllMakes().state(State.USED).year(thisYear).getCount())
                 .isBetween(30, 60);
-        assertThat(edmunds.findAllMakes().state(State.NEW).year(thisYear).count())
+        assertThat(edmunds.findAllMakes().state(State.NEW).year(thisYear).getCount())
                 .isBetween(30, 60);
-        assertThat(edmunds.findAllMakes().year(thisYear).count())
+        assertThat(edmunds.findAllMakes().year(thisYear).getCount())
                 .isBetween(30, 60);
     }
 
     @Test
     public void test_findAllMakes_get() {
         assertThat(edmunds.findAllMakes().get())
-                .hasSize(edmunds.findAllMakes().count())
+                .hasSize(edmunds.findAllMakes().getCount())
                 .allMatch(m->m.getId() != 0)
                 .allMatch(m->m.getName() != null)
                 .allMatch(m->!m.getName().isEmpty())
@@ -69,21 +63,21 @@ public class EdmundsMakesService_IT {
     @Test
     public void test_findAllMakes_get_state() {
         assertThat(edmunds.findAllMakes().state(State.NEW).get())
-                .hasSize(edmunds.findAllMakes().state(State.NEW).count());
+                .hasSize(edmunds.findAllMakes().state(State.NEW).getCount());
         assertThat(edmunds.findAllMakes().state(State.USED).get())
-                .hasSize(edmunds.findAllMakes().state(State.USED).count());
+                .hasSize(edmunds.findAllMakes().state(State.USED).getCount());
         assertThat(edmunds.findAllMakes().state(State.FUTURE).get())
-                .hasSize(edmunds.findAllMakes().state(State.FUTURE).count());
+                .hasSize(edmunds.findAllMakes().state(State.FUTURE).getCount());
         assertThat(edmunds.findAllMakes().state(null).get())
-                .hasSize(edmunds.findAllMakes().state(null).count())
-                .hasSize(edmunds.findAllMakes().count())
+                .hasSize(edmunds.findAllMakes().state(null).getCount())
+                .hasSize(edmunds.findAllMakes().getCount())
                 .isEqualTo(edmunds.findAllMakes().get());
     }
 
     @Test
     public void test_findAllMakes_get_state_year() {
         assertThat(edmunds.findAllMakes().year(thisYear).get())
-                .hasSize(edmunds.findAllMakes().year(thisYear).count())
+                .hasSize(edmunds.findAllMakes().year(thisYear).getCount())
                 .hasAtLeastOneElementOfType(Make.class);
     }
 

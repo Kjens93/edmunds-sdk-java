@@ -1,5 +1,8 @@
 package io.github.kjens93.edmunds;
 
+import io.github.kjens93.edmunds.enums.Category;
+import io.github.kjens93.edmunds.dtos.Year;
+import io.github.kjens93.edmunds.services.YearService;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsYearService_IT {
 
-    private static final YearService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final YearService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
 
     @Test
     public void test_findModelYear() {

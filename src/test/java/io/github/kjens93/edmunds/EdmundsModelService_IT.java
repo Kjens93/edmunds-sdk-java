@@ -1,5 +1,8 @@
 package io.github.kjens93.edmunds;
 
+import io.github.kjens93.edmunds.enums.State;
+import io.github.kjens93.edmunds.dtos.Model;
+import io.github.kjens93.edmunds.services.ModelService;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class EdmundsModelService_IT {
 
-    private static final ModelService edmunds = new Edmunds("8zk4wr8dg5s9pv8hrwgerb5x");
+    private static final ModelService edmunds = new Edmunds(System.getProperty("EDMUNDS_API_KEY"));
 
     @Test
     public void test_findModel_get() {
